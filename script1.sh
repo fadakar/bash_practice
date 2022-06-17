@@ -1,7 +1,8 @@
 #!/bin/bash
 
-LOGFILE= "/home/grf/script.log"
-TODAY= `date +%Y%m%d`
+
+TODAY= $(date '+%Y%m%d')
+LOGFILE= "/home/grf/script1_${HOSTNAME}_${TODAY}.log"
 echo "today ---- $TODAY ----"
 echo "hello $USER" > ${LOGFILE}
 read -p "Enter Your age: " age
