@@ -10,7 +10,7 @@ PD=$4
 
 /usr/bin/expect << EOF 
 spawn scp $FILE $USER@$HOST:/home/$USER
-expect "password:"
+expect "*password*"
 send "$PD\r"
 expect "*\r"
 expect "\r"
