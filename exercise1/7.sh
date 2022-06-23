@@ -5,14 +5,14 @@ IP_LIST_FILE="./7.ip.list"
 TODAY=`date +%F`
 LOG_FILE="./$HOSTNAME-status-$TODAY"
 
-while IFS= read -r line
+while IFS= read -r LINE
 do
-	ping -c 1 -W 3 $line > /dev/null 2>&1
+	ping -c 1 -W 3 $LINE > /dev/null 2>&1
 	if [ $? = 0 ]
 	then
-		echo "[$line]	UP" | tee -a $LOG_FILE
+		echo "[$LINE]	UP" | tee -a $LOG_FILE
 	else
-		echo "[$line]	DOWN" | tee -a $LOG_FILE
+		echo "[$LINE]	DOWN" | tee -a $LOG_FILE
 	fi
 done < "$IP_LIST_FILE"
 
